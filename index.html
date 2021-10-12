@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="./luci-static/resources/auth/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./luci-static/resources/auth/css/dist-session.css">
+
+
+    <!-- <link rel="icon" href="/img/favicon.png"> -->
+
+    <script defer="" src="./session.js"></script>
+
+    <script>
+        let link = document.location.href
+
+        console.log(link)
+    </script>
+
+    <title>Auth</title>
+
+    <script src="/luci-static/resources/cbi.js?v=git-21.164.71418-bd36169"></script>
+
+</head>
+
+<body cz-shortcut-listen="true">
+    <div class="flex-container">
+
+        <header>
+            <div class="container">
+                <!-- <ul class="nav" id="topmenu" style="display:none"></ul> -->
+
+                <ul class="nav" id="topmenu" style="">
+                    <li class="dropdown"><a class="menu" href="#">Службы</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/cgi-bin/luci/admin/services/transmission">Transmission</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </header>
+        <div id="session">
+            <h1>
+                <a href="/">
+            
+                Auth
+                <div class="link"></div>
+            </a>
+            </h1>
+
+            <div class="formHeading">
+                <h2>Log in &nbsp;👋</h2>
+            </div>
+
+            <script type="text/javascript" src="/luci-static/resources/promis.min.js?v=git-21.231.26241-422c175"></script>
+            <script type="text/javascript" src="/luci-static/resources/luci.js?v=git-21.231.26241-422c175"></script>
+            <!-- <script type="text/javascript">
+            L = new LuCI({
+                "apply_rollback": 90,
+                "resource": "\/luci-static\/resources",
+                "media": "\/luci-static\/bootstrap",
+                "documentroot": "\/www",
+                "pollinterval": 5,
+                "apply_display": 1.5,
+                "requestpath": [],
+                "ubuspath": "\/ubus\/",
+                "scriptname": "\/cgi-bin\/luci",
+                "dispatchpath": [],
+                "apply_timeout": 5,
+                "apply_holdoff": 4,
+                "nodespec": {
+                    "satisfied": true,
+                    "action": {
+                        "type": "template",
+                        "path": "admin_status\/index"
+                    },
+                    "order": 1,
+                    "depends": {
+                        "acl": ["luci-mod-status-index"]
+                    },
+                    "title": "Overview"
+                }
+            });
+        </script> -->
+            <form class="commonForm" id="session-form" method="post" action="/cgi-bin/luci" accept-charset="utf-8">
+                <fieldset>
+                    <input type="hidden" name="authenticity_token" value="6dVQqwlbeqC9h1I4ey9JEQQ4X3Bsf+LImX7Els5sL3kHNSvW2bghAiEF1Xcy5KATACMc6hQ5PxOo20R3DIqdqg==">
+
+                    <div class="fieldCont">
+                        <input id="luci_username" type="text" name="luci_username" maxlength="100" minlength="2" value="" required="" autofocus="">
+                        <label>Username</label>
+                    </div>
+
+                    <div class="fieldCont">
+                        <input id="luci_password" type="password" name="luci_password" required="">
+                        <label>Password</label>
+                    </div>
+
+
+                </fieldset>
+
+
+
+                <div class="formActions">
+                    <div class="buttonCont">
+                        <input type="submit" value="Войти">
+                    </div>
+                </div>
+            </form>
+            <!-- 
+        <div class="otherLinks">
+            <a href="/user/signup/">Sign up</a> <a href="/user/reset_password/">Reset password</a>
+        </div> -->
+
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>
